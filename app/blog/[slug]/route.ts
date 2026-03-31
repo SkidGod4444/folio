@@ -7,7 +7,8 @@ export async function GET(
   { params }: { params: Promise<{ slug: string }> }
 ) {
   const { slug } = await params
-  const post = getPostBySlug(slug)
+  const cleanSlug = slug.replace(/\.mdx$/, "")
+  const post = getPostBySlug(cleanSlug)
 
   if (!post) {
     return new Response("Post not found", { status: 404 })

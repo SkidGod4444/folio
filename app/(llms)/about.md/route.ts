@@ -9,8 +9,8 @@ ${USER.about}
 
 ---
 - Name: ${USER.displayName}
-- Location: ${USER.location}
-- Professional Title: ${USER.tagline}
+- Location: ${USER.address}
+- Professional Title: ${USER.jobTitle}
 `
 
   return new Response(content, {

@@ -7,12 +7,13 @@ export async function GET() {
 
 ${AWARDS.map(award => `
 ## ${award.title}
-Issuer: ${award.issuer}
-Date: ${award.issueDate}
+Prize: ${award.prize}
+Category: ${award.grade}
+Date: ${award.date}
 
 ${award.description || ""}
 
-${award.credentialURL ? `[Credential](${award.credentialURL})` : ""}
+${award.referenceLink ? `[Reference](${award.referenceLink})` : ""}
 `).join("\n\n---")}
 `
 
