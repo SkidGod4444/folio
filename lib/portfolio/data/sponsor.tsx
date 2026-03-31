@@ -1,3 +1,4 @@
+import React from "react"
 import type { Sponsor } from "@/types/portfolio/sponsor"
 
 export const SPONSORS: Sponsor[] = [

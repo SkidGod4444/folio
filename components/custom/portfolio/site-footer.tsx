@@ -3,7 +3,6 @@ import Link from "next/link"
 import { Icons } from "@/components/custom/portfolio/icons"
 import {
   GITHUB_USERNAME,
-  SOURCE_CODE_GITHUB_URL,
   X_USERNAME,
 } from "@/lib/portfolio/config/site"
 
@@ -11,40 +10,7 @@ export function SiteFooter() {
   return (
     <footer className="group/footer-layout container relative mx-auto mb-10 max-w-3xl px-2">
       <div className="screen-line-top screen-line-bottom flex h-fit flex-col border-x border-line p-2 sm:p-4">
-        <div className="mt-4 grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3">
-          <div className="flex flex-col gap-2">
-            <h3 className="font-mono text-xs font-medium uppercase tracking-wider text-muted-foreground">
-              Credits
-            </h3>
-            <p className="text-pretty font-mono text-sm leading-relaxed text-muted-foreground">
-              Built with{" "}
-              <Link
-                href="https://nextjs.org"
-                className="text-foreground transition-colors hover:text-primary"
-                target="_blank"
-              >
-                Next.js
-              </Link>
-              ,{" "}
-              <Link
-                href="https://tailwindcss.com"
-                className="text-foreground transition-colors hover:text-primary"
-                target="_blank"
-              >
-                Tailwind CSS
-              </Link>{" "}
-              &{" "}
-              <Link
-                href="https://ui.shadcn.com"
-                className="text-foreground transition-colors hover:text-primary"
-                target="_blank"
-              >
-                Shadcn UI
-              </Link>
-              .
-            </p>
-          </div>
-
+        <div className="mt-4 flex flex-wrap gap-8">
           <div className="flex flex-col gap-2">
             <h3 className="font-mono text-xs font-medium uppercase tracking-wider text-muted-foreground">
               Socials
@@ -73,20 +39,6 @@ export function SiteFooter() {
                 RSS
               </Link>
             </div>
-          </div>
-
-          <div className="flex flex-col gap-2">
-            <h3 className="font-mono text-xs font-medium uppercase tracking-wider text-muted-foreground">
-              Source
-            </h3>
-            <Link
-              href={SOURCE_CODE_GITHUB_URL}
-              className="inline-flex items-center gap-1.5 font-mono text-sm text-muted-foreground transition-colors hover:text-foreground"
-              target="_blank"
-            >
-              <Icons.github className="size-3.5" />
-              Source Code
-            </Link>
           </div>
         </div>
 
