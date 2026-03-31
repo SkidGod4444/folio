@@ -57,11 +57,11 @@ export function ProjectItem({
           </div>
         )}
 
-        <div className="flex-1 border-l border-dashed border-line">
+        <div className="flex flex-1 items-center border-l border-dashed border-line">
           <CollapsibleTrigger
             className={cn(
-               "flex w-full items-center gap-2 p-4 pr-2 text-left outline-none",
-               "group"
+              "flex flex-1 items-center gap-2 p-4 pr-2 text-left outline-none",
+              "group"
             )}
           >
             <div className="flex-1">
@@ -90,28 +90,39 @@ export function ProjectItem({
               </dl>
             </div>
 
-            <Tooltip>
-              <TooltipTrigger>
-                <a
-                  className="relative flex size-6 shrink-0 items-center justify-center text-muted-foreground after:absolute after:-inset-2 hover:text-foreground"
-                  href={addQueryParams(project.link, UTM_PARAMS)}
-                  target="_blank"
-                  rel="noopener"
-                  onClick={(e) => e.stopPropagation()}
-                >
-                  <IconLink className="pointer-events-none size-4" />
-                  <span className="sr-only">Open Project Link</span>
-                </a>
-              </TooltipTrigger>
-              <TooltipContent>
-                <p>Open Project Link</p>
-              </TooltipContent>
-            </Tooltip>
-
             <div className="shrink-0 text-muted-foreground [&_svg]:size-4">
               <CollapsibleChevronsIcon duration={0.15} />
             </div>
           </CollapsibleTrigger>
+
+          <div className="flex items-center pr-4">
+            <Tooltip>
+              <TooltipTrigger
+                render={(props) => (
+                  <a
+                    {...props}
+                    className={cn(
+                      "relative flex size-6 shrink-0 items-center justify-center text-muted-foreground after:absolute after:-inset-2 hover:text-foreground",
+                      props.className
+                    )}
+                    href={addQueryParams(project.link, UTM_PARAMS)}
+                    target="_blank"
+                    rel="noopener"
+                    onClick={(e) => {
+                      props.onClick?.(e)
+                      e.stopPropagation()
+                    }}
+                  >
+                    <IconLink className="pointer-events-none size-4" />
+                    <span className="sr-only">Open Project Link</span>
+                  </a>
+                )}
+              />
+              <TooltipContent>
+                <p>Open Project Link</p>
+              </TooltipContent>
+            </Tooltip>
+          </div>
         </div>
       </div>
 
