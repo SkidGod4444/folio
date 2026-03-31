@@ -14,12 +14,20 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="mx-auto max-w-3xl py-12">
-      <div className="screen-line-bottom px-4 pb-6">
+    <div className="container mx-auto max-w-3xl border-x border-line px-0">
+      <div className="screen-line-bottom px-4 pt-8 pb-4">
         <h1 className="text-3xl leading-none font-semibold tracking-tight">
           {title}
         </h1>
       </div>
+
+      <div className="p-4">
+        <p className="font-mono text-sm text-balance text-muted-foreground">
+          {description}
+        </p>
+      </div>
+
+      <div className="screen-line-top screen-line-bottom flex h-4" />
 
       <div className="p-4 pt-8">
         <ProseMono className="max-w-none">

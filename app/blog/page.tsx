@@ -17,20 +17,20 @@ export default function BlogPage() {
   const allPosts = getAllPosts()
 
   return (
-    <div className="mx-auto max-w-3xl py-12">
-      <div className="screen-line-bottom px-4 pb-6">
+    <div className="container mx-auto max-w-3xl border-x border-line px-0">
+      <div className="screen-line-bottom px-4 pt-8 pb-4">
         <h1 className="text-3xl leading-none font-semibold tracking-tight">
           {title}
         </h1>
       </div>
 
-      <div className="p-4 py-8">
+      <div className="p-4">
         <p className="font-mono text-sm text-balance text-muted-foreground">
           {description}
         </p>
       </div>
 
-      <div className="screen-line-top screen-line-bottom p-2">
+      <div className="screen-line-top screen-line-bottom p-2 flex items-center">
         <Suspense
           fallback={
             <div className="flex h-9 w-full rounded-lg border border-input dark:bg-input/30" />
