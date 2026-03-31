@@ -8,8 +8,9 @@ import {
 
 export function SiteFooter() {
   return (
-    <footer className="group/footer-layout container relative mx-auto mb-10 max-w-3xl px-2">
-      <div className="screen-line-top screen-line-bottom flex h-fit flex-col border-x border-line p-2 sm:p-4">
+    <footer className="group/footer-layout relative mx-auto mb-10 px-2 lg:px-0">
+      <div className="container mx-auto max-w-3xl border-x border-line px-0">
+        <div className="screen-line-top screen-line-bottom flex h-fit flex-col p-2 sm:p-4">
         <div className="mt-4 flex flex-wrap gap-8">
           <div className="flex flex-col gap-2">
             <h3 className="font-mono text-xs font-medium uppercase tracking-wider text-muted-foreground">
@@ -60,6 +61,7 @@ export function SiteFooter() {
               LLMS.txt
             </Link>
           </div>
+        </div>
         </div>
       </div>
     </footer>
